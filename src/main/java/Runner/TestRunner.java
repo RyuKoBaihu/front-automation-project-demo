@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
         glue = {"StepDefinitions"},
         monochrome = false,
         stepNotifications = true,
-        tags ="@Elite_Individual_Numeric_Fields_Filled_In_With_Letters_In_W9_And_Instructions"
+        tags ="@firstFeature"
 )
 public class TestRunner {
 
