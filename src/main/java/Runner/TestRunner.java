@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
         glue = {"StepDefinitions"},
         monochrome = false,
         stepNotifications = true,
-        tags ="@firstFeature"
+        tags ="@first_test"
 )
 public class TestRunner {
 

@@ -10,20 +10,16 @@ public class ApplicationProperties {
 
     public static void setProperties() {
 
-        try(FileInputStream fis = new FileInputStream("src/test/resources/application.properties")){
+        try (FileInputStream fis = new FileInputStream("src/test/resources/application.properties")) {
             applicationproperties.load(fis);
-        }catch (IOException e){
+        } catch (IOException e) {
             //noinspection CallToPrintStackTrace
             e.printStackTrace();
         }
+
     }
 
-
-    public static String getUrl() {
-
+    public static String getUrl () {
         return applicationproperties.getProperty("systemundertest.url");
-
     }
-
-
 }

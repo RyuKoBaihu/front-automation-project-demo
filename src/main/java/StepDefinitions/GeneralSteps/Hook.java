@@ -1,29 +1,24 @@
 package StepDefinitions.GeneralSteps;
 
+import BrowserFactory.DriverFactory;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
-import static BrowserFactory.DriverFactory.getDriver;
+import org.openqa.selenium.WebDriver;
 
 
 public class Hook {
-    /**
-     * Method responsible to initiate the InputExecutionParameters class and get files properties
-     *
-     *
-     */
+    // WebDriver compartilhado entre os testes
+    protected static WebDriver driver;
+
     @BeforeAll
     public static void setup() {
-        InputExecutionParameters.setTags();
-        ApplicationProperties.setProperties();
+        // Cria o WebDriver antes de todos os testes, usando a DriverFactory
+        driver = DriverFactory.getDriver();
     }
-    /**
-     *  Method that closes the browser after test execution
-     *
-     */
+
+    @AfterAll
     public static void tearDown() {
-        if (getDriver() != null) {
-            getDriver().quit();
-        }
+        // Fecha o WebDriver após todos os testes
+        DriverFactory.quitDriver();
     }
-
-
 }
