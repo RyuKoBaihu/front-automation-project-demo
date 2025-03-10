@@ -11,9 +11,9 @@ public class AccessComplicatedPageActions {
     WebDriver driver = getDriver();
     String url = getUrl();
 
-
     public void accessComplicatedPage() {
-        driver.navigate().to(System.getProperty(url));
+        driver.get(url);
+        System.out.println("A URL obtida é: " + url);
     }
 
 

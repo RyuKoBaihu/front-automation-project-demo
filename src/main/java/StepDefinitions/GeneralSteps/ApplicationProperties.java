@@ -6,20 +6,19 @@ import java.util.Properties;
 
 public class ApplicationProperties {
 
-    private static final Properties applicationproperties = new Properties();
+    // Carregar as propriedades
+    private static Properties properties = new Properties();
 
-    public static void setProperties() {
-
+    static {
         try (FileInputStream fis = new FileInputStream("src/test/resources/application.properties")) {
-            applicationproperties.load(fis);
+            properties.load(fis); // Carrega o arquivo application.properties
         } catch (IOException e) {
-            //noinspection CallToPrintStackTrace
-            e.printStackTrace();
+            e.printStackTrace(); // Tratar caso o arquivo não seja encontrado ou erro de leitura
         }
-
     }
 
-    public static String getUrl () {
-        return applicationproperties.getProperty("systemundertest.url");
+    // Ler a URL da aplicação do arquivo properties
+    public static String getUrl() {
+        return properties.getProperty("application.url");
     }
 }
